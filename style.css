@@ -16,6 +16,7 @@ body{
   left: 0;
   top: 0;
   width: 100%;
+  min-height: 4em;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -66,6 +67,8 @@ body{
 }
 .logo{
   font-size: 1.5em;
+  min-width: 4.5em;
+  min-height: 1.2em;
   text-align: center;
   flex: 0 1 auto;
   margin: 0 1em;
@@ -156,6 +159,7 @@ body{
   align-items: center;
   justify-content: space-between;
   width: 100%;
+  height: 100%;
   margin: 0;
   padding: 0 1rem;
   text-align: center;
@@ -181,10 +185,14 @@ body{
   background-size: .125rem 0%;
 }
 .agency-header-question:first-child{
+  min-width: 1.9375rem;
+  min-height: 6.5625rem;
   margin-right: 3%;
   transform: rotate(180deg);
 }
 .agency-header-question:last-child{
+  min-width: 1.9375rem;
+  min-height: 5.5rem;
   margin-left: 3%;
 }
 .agency-question:hover{
@@ -196,6 +204,8 @@ body{
 }
 .agency-question-last{
   position: relative;
+  min-width: 4.75rem;
+  min-height: 1.9375rem;
   padding-bottom: .5rem;
   margin-top: .875em;
   background-size:0% .125rem;
@@ -246,7 +256,7 @@ body{
     max-height: 14rem;
   }
   .agency-content-header{
-    display: block;
+    justify-content: center;
   }
   .agency-question{
     display: none;
