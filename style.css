@@ -4,24 +4,23 @@ html{
 }
 body{
   font-family: 'GrtskGiga',"MS Sans Serif","Nimbus Sans L",Helvetica,sans-serif;
-  min-height: 100vh;
   margin: 0;
   padding: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  justify-content: flex-start;
   background-color: #bebebe;
 }
 *,:before,:after{
   box-sizing: border-box;
 }
-.header{width: 100%;
-  flex: none;
+.header{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1em 1em 1em;
+  padding: 1em;
+  z-index: 2;
 }
 .lang-menu-wrap{
   position: relative;
@@ -103,29 +102,28 @@ body{
   width: 100%;
   height: 0;
   position: absolute;
-  border-bottom: .125em solid #000;
   left:0;
   top:50%;
+  border-bottom: .125em solid #000;
   transform: translateY(-50%);
 }
-.main{
-  flex: 1 1 auto;
+.agency{
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding-bottom: 1rem;
   position: relative;
-  padding: 0 0 1rem;
-}
-.main-content-wrap{
-  flex:none;
+  min-height: 100vh;
+  padding: 4em 0 1rem;
+  }
+.agency-content-wrap{
+  flex: none;
   width: 100%;
   position: relative;
   z-index: 0;
   margin: auto;
 }
-.main-content-wrap::before{
+.agency-content-wrap::before{
   content: "";
   display: block;
   width: 39rem;
@@ -133,9 +131,10 @@ body{
   border-radius: 50%;
   margin: auto;
   background-color: #FFCB46;
+  -webkit-filter: blur(2.375rem);
   filter: blur(2.375rem);
 }
-.main-content-wrap::after{
+.agency-content-wrap::after{
   content: "●";
   font-family:Arial,Helvetica,sans-serif;
   font-size: 1.25rem;
@@ -152,7 +151,7 @@ body{
   background-repeat: no-repeat;
   background-size: contain;
 }
-.main-content-header {
+.agency-content-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -166,14 +165,14 @@ body{
   bottom: 50%;
   transform: translateY(50%);
 }
-.main-question{
+.agency-question{
   text-align: center;
   font-size: 1.125rem;
   font-weight: bold;
   color:#373737;
   background: linear-gradient(to left,#ffffff 0%,#ffffff 100%) no-repeat;
   }
-.main-header-question{
+.agency-header-question{
   flex: none;
   display: block;
   padding-left: .5rem;
@@ -181,28 +180,29 @@ body{
   background-position:.125rem 0%;
   background-size: .125rem 0%;
 }
-.main-header-question:first-child{
+.agency-header-question:first-child{
   margin-right: 3%;
   transform: rotate(180deg);
 }
-.main-header-question:last-child{
+.agency-header-question:last-child{
   margin-left: 3%;
 }
-.main-question:hover{
+.agency-question:hover{
   transition: background-size .35s linear;
   cursor: default;
 }
-.main-header-question:hover{
+.agency-header-question:hover{
   background-size: .125rem 100%;
 }
-.main-question-last{
+.agency-question-last{
   position: relative;
   padding-bottom: .5rem;
+  margin-top: .875em;
   background-size:0% .125rem;
   background-position:0% calc(100% - .25rem);
   z-index: 1;
 }
-.main-question-last:hover{
+.agency-question-last:hover{
   background-size:100% .125rem;
 }
 @media(min-width:1536px){
@@ -210,8 +210,8 @@ body{
     font-size:calc(100vw / 1536 * 16);
   }
 }
-@media(min-width:414px) and (max-width:1535.98px){
-  .header{
+@media(min-width:414px) and (max-width:1536px){
+  .header,.main{
     font-size: 16px;
   }
 }
@@ -225,35 +225,36 @@ body{
     font-size:calc(960px / 1200 * 16);
   }
 }
-@media(max-width:767.98px){
+@media(max-width:768px){
   html{
     font-size:calc(100vw / 960 * 16);
   }
-  .main{
-    padding: 4rem 0;
+  .agency{
+    padding: 4em 0 4rem;
   }
-  .main-content-wrap::before{
+  .agency-content-wrap::before{
     width: 43rem;
     height: 43rem;
+    -webkit-filter: blur(3.25rem);
     filter: blur(3.25rem);
   }
-  .main-content-wrap::after{
+  .agency-content-wrap::after{
     font-size: 15px;
     width: 92px;
     height: 92px;
     max-width: 14rem;
     max-height: 14rem;
   }
-  .main-content-header{
+  .agency-content-header{
     display: block;
   }
-  .main-question{
+  .agency-question{
     display: none;
   }
   .lang-menu{
     flex-direction: column;
     min-width: 100%;
-    top:0%;
+    top:0;
     left:0;
     transform: none;
     padding: 150% 0 0;
@@ -266,11 +267,11 @@ body{
     visibility: visible;
   }
 }
-@media(max-width:413.98px){
-  .header{
+@media(max-width:414px){
+  .header,.main{
     font-size:calc(100vw / 414 * 16);
   }
-  .main-content-wrap::after{
+  .agency-content-wrap::after{
     font-size: 2.25rem;
   }
 }
