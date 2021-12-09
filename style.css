@@ -118,6 +118,7 @@ body{
   position: relative;
   min-height: 100vh;
   padding: 4em 0 1rem;
+  overflow: hidden;
   }
 .agency-content-wrap{
   flex: none;
@@ -149,10 +150,22 @@ body{
   position: absolute;
   top: calc(100% - 9.5rem);
   right: 50%;
-  transform: translateX(16.5rem);
+  transform: translateX(calc(50vw + 8rem)) rotate(720deg);
   background-image:url(images/reel.png);
   background-repeat: no-repeat;
   background-size: contain;
+  -webkit-animation: wheel 1.25s ease-out forwards .5s;
+  animation: wheel 1.25s ease-out forwards .5s;
+}
+@-webkit-keyframes wheel {
+  100%{
+    transform: translateX(16.5rem) rotate(0deg);
+  }
+}
+@keyframes wheel {
+  100%{
+    transform: translateX(16.5rem) rotate(0deg);
+  }
 }
 .agency-content-header {
   display: flex;
@@ -254,6 +267,7 @@ body{
     height: 92px;
     max-width: 14rem;
     max-height: 14rem;
+    transform: translateX(calc(50vw + 14rem)) rotate(540deg);
   }
   .agency-content-header{
     justify-content: center;
@@ -283,5 +297,6 @@ body{
   }
   .agency-content-wrap::after{
     font-size: 2.25rem;
+    transform: translateX(calc(50vw + 14rem)) rotate(360deg);
   }
 }
